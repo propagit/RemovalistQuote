@@ -1,0 +1,16 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^www.removalistquote.com.au [NC]
+RewriteRule ^(.*)$ http://removalistquote.com.au/$1 [L,R=301]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+# Permanent URL redirect
+Redirect 301 /store/suppliers http://removalistquote.com.au/suppliers
+Redirect 301 /store/aboutus http://removalistquote.com.au/aboutus
+Redirect 301 /store/privacy_policy http://removalistquote.com.au/privacy_policy
+Redirect 301 /store/terms_and_conditions http://removalistquote.com.au/terms_and_conditions
+Redirect 301 /store/suppliermore http://removalistquote.com.au/suppliermore

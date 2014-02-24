@@ -1,0 +1,50 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#background-popup{
+display:none;
+position:fixed;
+_position:absolute; /* hack for internet explorer 6*/
+height:100%;
+width:100%;
+top:0;
+left:0;
+background:#000000;
+border:0;
+z-index:100;
+}
+#popup-content {
+border:10px solid #ccc;
+background:#fff;
+padding:10px;
+width:400px;
+min-height:200px;
+max-height:400px;
+overflow:auto;
+}
+#sale-content {
+border:10px solid #ccc;
+background:#fff;
+padding:10px;
+min-height:100px;
+max-height:400px;
+overflow:auto;
+}
+#tell-friend { width:446px; height:335px; background:url(../img/bg-tell-friend.png); margin:0 auto }
+#tell-friend .close { float:right; margin-top:16px; margin-right:20px }
+#popup-shopping{ height: 235px;margin: 0 auto;width: 446px;background:url(../img/bg-tell-friend.png);}
+#popup-shopping .close { float:right; margin-top:16px; margin-right:20px }
+#cvv_popup { width:446px; height:705px; background:#fff url(../img/bg-tell-friend.png) no-repeat; margin:0 auto }
+#cvv_popup .close { float:right; margin-top:16px; margin-right:20px }
+#popup-box{
+display:none;
+position:fixed;
+_position:absolute; /* hack for internet explorer 6*/
+height:auto;
+width:100%;
+
+z-index:200;
+text-align:left;
+}
+.loading { padding:10px; }
+.loading h1 { margin:0; padding:0 0 5px 0; text-align:center; }

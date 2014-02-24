@@ -1,0 +1,12 @@
+.product-thumb { padding:5px 0; }
+.p-name { font-weight:600; font-size:11px; }
+.p-desc, .p-price { font-size:11px; }
+#tell-friend form { padding:1px 0px 0 0px; }
+#tell-friend dl { margin:0 0 0px 0; }
+#tell-friend dl dt { width:180px; line-height:28px; font-size:15px; margin:0 0 6px 0; padding:0; }
+#tell-friend input { height:28px; width:213px; }
+#tell-friend .send { margin:7px 10px; }
+
+.customer .box { width:276px; }
+.customer input.profile { width:172px; }
+#footer .copyright { font-size:11px; margin:-15px 13px 0 0; clear:both; width:480px; }

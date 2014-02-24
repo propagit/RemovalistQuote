@@ -1,0 +1,21 @@
+<div id="home_top_container">
+	<div class="main-bg about-us-bg" >	  
+
+       <div class="content-top">
+			<h1>OUR REMOVAL SERVICES</h1>
+            <h3 style="width:100%;">When it comes to removal services, we got it all covered.</h3>
+			<p>
+            Removalist Quote provides all relocation services such as <strong>"Moving House"</strong>, <strong>"Moving To Storage"</strong> and <strong>"Moving Office"</strong>.<br /><br />Our customers can also choose optional services such as <strong>"Carpet Cleaning"</strong>, <strong>"Packing and Unpacking Services"</strong> while requesting for a removalist quote.  
+            </p>
+            
+            <p>
+            <br />
+            <a href="<?=base_url();?>">Click here</a> to get your free online removal quote now. <br />
+            Or call us on <strong>1300-531475</strong> for a no obligation chat. 
+            </p>
+          
+        </div>
+        
+    </div>
+</div>
+
