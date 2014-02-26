@@ -1,4 +1,4 @@
-* { margin:0; padding:0; }
+q* { margin:0; padding:0; }
 
 
 html, body {
@@ -55,6 +55,8 @@ background-color:#FFF;
 	width:auto;	
 }
 .nav li a{ font-size:18px; font-weight:800; color:#616161;}
+.nav li a:hover,
+.nav li a.active { color:#86151d;}
 .nav li:after{
 	content:"I";font-size:18px; font-weight:800; color:#616161;margin-top: -35px;width: 4px; float:right;
 }
@@ -63,6 +65,10 @@ background-color:#FFF;
 }
 .nav>li>a:hover, .nav>li>a:focus{
 	color:#8f1720; background-color:transparent;
+}
+.active-nav-caret{
+	position:absolute;
+	margin-top:6px;	
 }
 .desktop-visible{
 	display:block;	
@@ -93,6 +99,9 @@ background-color:#FFF;
 		font-size: 15px;
 		margin-top: -31px;
 	}
+	.active-nav-caret{
+		margin-top:0;	
+	}
 }
 
 @media (max-width:768px){
@@ -113,6 +122,7 @@ background-color:#FFF;
 		line-height: 34px;
 		margin-top: 15px;
 	}
+	
 }
 
 /* end new css */
