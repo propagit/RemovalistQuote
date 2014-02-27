@@ -1,3 +1,27 @@
+<div class="col-md-12 page-bg">
+	<h1 class="inline">STEP 1</h1>
+    <h2 class="inline">What removal service are you after?</h2>
+    <h4>Get competitive removalist quotes sent directly to your email inbox in 3 simple steps</h4>
+    
+    <div class="col-md-3 home-boxes">
+    	<img alt="moving-home.png" title="Moving home" src="<?=base_url()?>img/home1.png">
+    </div>
+    <div class="col-md-3 home-boxes">
+    	<img alt="moving-to-storage.png" title="Moving to storage" src="<?=base_url()?>img/home2.png">
+    </div>
+    <div class="col-md-3 home-boxes">
+    	<img alt="moving-1-to-5.png" title="Moving 1 to 5 items" src="<?=base_url()?>img/home3.png">
+    </div>
+    <div class="col-md-3 home-boxes">
+    	<img alt="moving-office.png" title="Moving office" src="<?=base_url()?>img/home4.png" >
+    </div>
+</div>
+
+
+
+
+
+<?php if(0) { ?>
 <script type="text/javascript" src="<?=base_url()?>js/popup.js"></script>
 <link href="<?=base_url()?>css/popup.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="<?=base_url()?>js/jquery-cycle-lite.js"></script>
@@ -120,12 +144,8 @@ function next_step(service)
 <div style="clear:both"></div>
 
 <div id="home_top_container">
-	<? if($step==1){?>
     <div class="main-bg main-page-bg">	  
-    <? } else {?>
-    <div class="main-bg about-us-bg">	  
-    <? }?>
-        <? if($step==1){?>
+
         <div class="content-top">
         	<div style="float:left">
             	<h1>STEP 1</h1>
@@ -242,98 +262,10 @@ function next_step(service)
 				  jQuery("#item_text4").slideUp(300);
 			});
 		</script>
-        
-        <? } 
-		else if($step==2){ ?>
-        <div class="content-top">
-            <h1>STEP 2 <?=($removal_service != '' ? ' - '.$removal_service : '');?></h1>
-            <p class="dark_gray font_form" style="margin-top:5px;">
-                Please provide us with the postcode <br />
-				of your pick up address so we can find<br />
-				the most suitable removal company for your location<br />
-            </p>
-        </div>
-        <form name="formlocation" id="formlocation" action="<?=base_url()?>store/savelocation" method="post">
-        <div style="clear:both"></div>
-        <div style="float:none; padding-left:45px;">
-        	<div style="float:left; margin-top:15px;">
-            	<span class="gray font_form">State*</span>
-                <div style="margin-top:15px; text-align:right;">
-                <select id="state_from" name="state_from" onchange="getsuburbfrom()">
-                	<? foreach($states as $state){ ?>
-                    <option value="<?=$state['id']?>" <? if($state['id']==7){ echo 'selected=selected';}?>><?=$state['name']?></option>
-                    <? } ?>
-                </select>
-                </div>
-                <div style="margin-top:15px;">
-                <span class="gray font_form">City / Town</span>
-                </div>
-                <div style="background:url(<?=base_url()?>img/input_text.png); width:244px; height:43px;">
-                    <input type="text" id="city_from" name="city_from" style="margin-top:5px !important; background:none; width:240px !important">
-                    </div>
-                <div style="margin-top:15px;">                    
-                <span class="gray font_form">Suburb*</span>
-                </div>
-                <div style="margin-top:15px; text-align:right;" name="divsuburbfrom" id="divsuburbfrom">
-                <select name="suburb_from" id="suburb_from">
-                	<option value="-">Select Suburb</option>                    
-                </select>
-                </div>
-            </div>
-        	<div style="float:left; margin-top:15px; margin-left:20px;width:55px;">
-            	<span class="gray font_form">To</span>
-            </div>
-            <div style="float:left; margin-top:15px;">
-            	<span class="gray font_form">State*</span>
-                <div style="margin-top:15px; text-align:right;">
-                <select id="state_to" name="state_to" onchange="getsuburbto()">
-                	<? foreach($states2 as $state){ ?>
-                    <option value="<?=$state['id']?>" <? if($state['id']==7){ echo 'selected=selected';}?>><?=$state['name']?></option>
-                    <? } ?>
-                </select>
-                </div>
-                <div style="margin-top:15px;">
-                <span class="gray font_form">City / Town</span>
-                </div>
-                <div style="background:url(<?=base_url()?>img/input_text.png); width:244px; height:43px;">
-                    <input type="text" id="city_to" name="city_to" style="margin-top:5px !important; background:none; width:240px !important">
-                    </div>
-                <div style="margin-top:15px;">                    
-                <span class="gray font_form">Suburb*</span>
-                </div>
-                <div style="margin-top:15px; text-align:right;" name="divsuburbto" id="divsuburbto">
-                <select name="suburb_to" id="suburb_to">
-                	<option value="-">Select Suburb</option>                    
-                </select>
-                </div>
-            </div>
-        </div>
-        <div style="clear:both"></div>
-        <div style="float:right; margin-right:53px; margin-top:15px;">
-        <a onclick="checklocation()" ><img src="<?=base_url()?>img/next-step.png" style="float:right;"/></a>
-        </div>
-        </form>
-        <!--
-        <div style="float:right">
-        	<p class="dark_gray main-p" >
-            	What is your post code?
-                <div class="pdr" style="margin-top:15px; text-align:right;float:right;">
-                	<div style="background:url(<?=base_url()?>img/input_text.png); width:244px; height:43px;">
-                    <input type="text" style="margin-top:5px !important; background:none; width:240px !important">
-                    </div>
-                </div>
-                <div class="pdr" style="margin-top:70px;">
-                <a href="<?=base_url()?>store/step3"><img src="<?=base_url()?>img/next-step.png" style="float:right;"/></a>
-                </div>
-            </p>
-        </div>
-        -->
-        
-        <? }?>
+
     </div>
 </div>
 
-<?php if($step == 1){ ?>
 <div class="content-wrap">
 	<div class="content-wrap-top"></div>
     <div class="content-wrap-mid">

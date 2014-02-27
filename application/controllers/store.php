@@ -29,10 +29,10 @@ class Store extends CI_Controller {
 		$data['states']=$this->Location_model->allstates();
 		$data['states2']=$this->Location_model->allstates();
 		$this->load->view('common/header',$header);
-		//$this->load->view('store/main',$data);
+		$this->load->view('store/main',$data);
 		
 		//$this->load->view('common/menu_bottom');
-		$this->load->view('common/footer');
+		//$this->load->view('common/footer');
 	}
 	function saveservice($service)
 	{
