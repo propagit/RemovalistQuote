@@ -1,8 +1,11 @@
-<div class="col-md-12 page-bg">
-	<h1 class="inline">STEP 1</h1>
-    <h2 class="inline">What removal service are you after?</h2>
-    <h4>Get competitive removalist quotes sent directly to your email inbox in 3 simple steps</h4>
-    
+<div class="col-md-12 page-bg desktop-hidden"> 
+	<?php
+		$this->load->view('store/mob_step1_and_step2',$mob_data);
+	?>
+</div>
+ <?php if(1){ ?>
+<div class="col-md-12 page-bg desktop-visible">
+
     <div class="col-md-3 home-boxes">
     	<img alt="moving-home.png" title="Moving home" src="<?=base_url()?>img/home1.png">
     </div>
@@ -15,8 +18,25 @@
     <div class="col-md-3 home-boxes">
     	<img alt="moving-office.png" title="Moving office" src="<?=base_url()?>img/home4.png" >
     </div>
-</div>
 
+</div>    
+<?php } ?>
+<script>
+function getsuburbfrom() {
+	var state = $("#state_from").val();
+	var cond='1';
+	$.ajax({
+		url: '<?=base_url()?>store/getsuburb',
+		type: 'POST',
+		data: {state:state,cond:cond},
+		dataType: "html",
+		success: function(html) {
+			$('#divsuburbfrom').html(html);
+		}
+	})
+	
+}
+</script>
 
 
 
@@ -48,22 +68,7 @@ jQuery(document).ready(function(){
 	getsuburbto();
 
 }); 
-function getsuburbfrom() {
-	var state = jQuery("#state_from").val();
-	var cond='1';
-	//jQuery('#divsuburbfrom').html('Loading..');
-	jQuery.ajax({
-	url: '<?=base_url()?>store/getsuburb',
-	type: 'POST',
-	data: {state:state,cond:cond},
-	dataType: "html",
-	success: function(html) {
-		
-		jQuery('#divsuburbfrom').html(html);
-	}
-	})
-	
-}
+
 function getsuburbto() {
 	
 	var state = jQuery("#state_to").val();

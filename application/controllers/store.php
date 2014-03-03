@@ -26,8 +26,7 @@ class Store extends CI_Controller {
 				);
 				
 		$data['step']=1;
-		$data['states']=$this->Location_model->allstates();
-		$data['states2']=$this->Location_model->allstates();
+		$data['mob_data']['states']=$this->Location_model->allstates();
 		$this->load->view('common/header',$header);
 		$this->load->view('store/main',$data);
 		
@@ -101,12 +100,12 @@ class Store extends CI_Controller {
 		$option='<option value="-">There is no suburb yet in this state</option>';		
 		if($cond==1)
 		{
-			$out='<select name="suburb_from" id="suburb_from">';
+			$out='<select class="form-control" name="suburb_from" id="suburb_from"  data="required">';
 			
 		}
 		if($cond==2)
 		{
-			$out='<select name="suburb_to" id="suburb_to">';
+			$out='<select class="form-control" name="suburb_to" id="suburb_to"  data="required">';
 			
 		}
 		if($suburbs)
@@ -154,7 +153,7 @@ class Store extends CI_Controller {
 				);
 		$data['removal_service'] = $service_name;
 		$this->load->view('common/header',$header);
-		$this->load->view('store/form',$data);
+		$this->load->view('store/step3',$data);
 		$this->load->view('common/menu_bottom');
 		$this->load->view('common/footer');
 	}

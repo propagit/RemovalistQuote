@@ -30,7 +30,8 @@
     <!--fontawesome-->
 	<link rel="stylesheet" href="<?=base_url();?>frontend-assets/font-awesome/css/font-awesome.min.css">
     
-    
+    <!--helper scripts -->
+    <script src="<?=base_url();?>frontend-assets/js/helpers.js"></script>
     <!--sys css-->
     <link rel="stylesheet" href="<?=base_url();?>frontend-assets/css/styles.css">
     
@@ -46,7 +47,7 @@
            </a>
         </div>
         <div class="col-md-8 nav-wrap remove-gutters">
-        	<h1>
+        	<h1 class="slogan">
             GET 3 COMPETITIVE QUOTES 
             SENT TO YOUR INBOX NOW!
             </h1>
@@ -59,27 +60,40 @@
         </div>
     </div><!--end desktop header-->
     
+    <!--begin mob header-->
      <div class="container head-wrap desktop-hidden">
         <div class="col-md-12 remove-gutters">
         	  <div class="logo-wrap">
                   <a href="<?=base_url()?>" title="Removalist Quote">
-                       <img class="logo inline" src="<?=base_url()?>frontend-assets/img/mobile-logo.png" alt="logo.png" title="Removalist Quote Logo" />
+                       <img class="logo inline" src="<?=base_url()?>frontend-assets/img/logo.png" alt="logo.png" title="Removalist Quote Logo" />
                   </a>
               </div>
-              <button class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" type="button">
-                 <i class="fa fa-align-justify"></i>
-              </button>
-              <div class="nav-collapse collapse push" style="height: auto;">
-                  <ul class="nav mob-navbar">
-                       <li><a <?=($cur_page == '' ? 'class="active"' : '');?> href="<?=base_url()?>">GET A QUOTE</a></li>
-                       <li><a <?=($cur_page == 'suppliers' ? 'class="active"' : '');?> href="<?=base_url()?>suppliers">SUPPLIERS</a></li>
-                       <li><a <?=($cur_page == 'aboutus' ? 'class="active"' : '');?> href="<?=base_url()?>aboutus">ABOUT US</a></li>
-                       <li><a <?=($cur_page == 'contactus' ? 'class="active"' : '');?> href="<?=base_url()?>contactus">CONTACT US</a></li>
-                  </ul>
-              </div>
-        </div><!--end mob nav-->
-    </div><!--end desktop header-->
-        
+        </div>
+    </div>
+    <div class="container mob-nav-wrap desktop-hidden">
+    	 <div class="col-md-12 remove-gutters">
+        	<button class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" type="button">
+               <i class="fa fa-align-justify"></i>
+            </button>
+            <div class="nav-collapse collapse push" style="height: auto;">
+                <ul class="nav mob-navbar">
+                     <li><a <?=($cur_page == '' ? 'class="active"' : '');?> href="<?=base_url()?>">GET A QUOTE</a></li>
+                     <li><a <?=($cur_page == 'suppliers' ? 'class="active"' : '');?> href="<?=base_url()?>suppliers">SUPPLIERS</a></li>
+                     <li><a <?=($cur_page == 'aboutus' ? 'class="active"' : '');?> href="<?=base_url()?>aboutus">ABOUT US</a></li>
+                     <li><a <?=($cur_page == 'contactus' ? 'class="active"' : '');?> href="<?=base_url()?>contactus">CONTACT US</a></li>
+                </ul>
+            </div><!--end mob nav-->
+        </div>
+    </div>
+    <div class="container desktop-hidden">
+    <div class="col-md-12 remove-gutters">
+            <h1 class="slogan">
+              GET 3 COMPETITIVE QUOTES 
+              SENT TO YOUR INBOX NOW!	
+            </h1>
+        </div>
+    </div>
+    <!--end mobile header-->    
         
 
 </header>
