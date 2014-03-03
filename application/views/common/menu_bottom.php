@@ -1,3 +1,10 @@
+<div class="col-md-6 bottom-boxes">
+	<h1>Our Gurantee</h1>
+</div>
+<div class="col-md-6">
+
+</div>
+<?php if(0){ ?>
 <div style="clear:both;"></div>
 <div id="home_bottom" style="float:none; margin-top:70px;">
    
@@ -29,3 +36,4 @@ you are guaranteed the best prices.
     
     </div>
 </div>
+<?php } ?>
