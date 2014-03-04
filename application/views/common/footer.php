@@ -34,8 +34,7 @@
 </div><!--container-->
 
 <script type="text/javascript">
-var $j = jQuery.noConflict();
-$j(function() {
+$(function() {
 	  <?php if($this->session->flashdata('sign_msg'))
 	  {?>
 		  alert('<?=$this->session->flashdata('sign_msg')?>');
@@ -94,16 +93,16 @@ function check_signup()
 	var valid = true;
 	var email_specify = true;
 
-	if($j('#signup_email').val() == "") { 
-		$j('#signup_email').css('background','#fff3a0'); 
+	if($('#signup_email').val() == "") { 
+		$('#signup_email').css('background','#fff3a0'); 
 		valid = false; 
 		email_specify = false;
 	} else { 
-		if(echeck($j('#signup_email').val())==false) {
-			$j('#signup_email').css('background','#fff3a0'); 
+		if(echeck($('#signup_email').val())==false) {
+			$('#signup_email').css('background','#fff3a0'); 
 			valid = false;
 			email_specify = false;
-		}else { $j('#signup_email').css('background','none');}
+		}else { $('#signup_email').css('background','none');}
 	}
 	
 	if(valid){
