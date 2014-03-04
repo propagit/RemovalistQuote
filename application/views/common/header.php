@@ -39,6 +39,7 @@
     <?php $cur_page = $this->uri->segment(1);?>
 </head>
 <body>
+<div id="body-bg"></div>
 <header>
     <div class="container head-wrap desktop-visible">
     	<div class="col-md-4 logo-wrap remove-gutters">
@@ -70,9 +71,10 @@
               </div>
         </div>
     </div>
-    <div class="container mob-nav-wrap desktop-hidden">
+    <div class="container mob-nav-wrap desktop-hidden remove-gutters">
     	 <div class="col-md-12 remove-gutters">
-        	<button class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" type="button">
+         	<span class="mob-menu-head">MENU <i class="fa fa-angle-right"></i></span>
+        	<button class="btn btn-navbar mob-menu-btn" data-target=".nav-collapse" data-toggle="collapse" type="button">
                <i class="fa fa-align-justify"></i>
             </button>
             <div class="nav-collapse collapse push" style="height: auto;">

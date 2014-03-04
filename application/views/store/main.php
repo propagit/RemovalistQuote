@@ -4,8 +4,10 @@
 	?>
 </div>
  <?php if(1){ ?>
-<div class="col-md-12 page-bg desktop-visible">
-
+<div class="col-md-12 page-bg home-boxes-wrap desktop-visible">
+	<h1>STEP 1</h1>
+	<h2>What removal service are you after?</h2>
+    <p class="f14">Get competitive removalist quotes sent directly to your email inbox in 3 simple steps</p>
     <div class="col-md-3 home-boxes">
     	<img alt="moving-home.png" title="Moving home" src="<?=base_url()?>img/home1.png">
     </div>
@@ -19,7 +21,19 @@
     	<img alt="moving-office.png" title="Moving office" src="<?=base_url()?>img/home4.png" >
     </div>
 
-</div>    
+</div>  
+<div class="col-md-12 page-bg">
+	<h1>Removalist Quote</h1>
+    <p>
+    <br />
+    <b>Removalist Quote</b> provides <b>free removal quotes</b> for a full range of residential or commercial removals. Get competing removal quotes based on your needs and budget from several of our dedicated and independent partners. All of our partners are <b>professional removalist based in Melbourne</b> with year of experience in removalist services to ensure a smooth and easy relocation for you.<br /><br />
+    
+What sets <b>Removalsit Quote</b> apart from all other companies is that we provide 3 free removal quotes for all of our removal services. Once a customer request a quote online, their request are analyzed and sent to the company that best suits them based on attributes such as relocating location, removalist services required etc.<br /><br />
+
+<b>Removalist Quote</b> is simple and 100% free to use for all without any hidden costs.
+
+    </p>
+</div>  
 <?php } ?>
 <script>
 function getsuburbfrom() {
@@ -35,6 +49,20 @@ function getsuburbfrom() {
 		}
 	})
 	
+}
+
+function getsuburbto() {
+	var state = $("#state_to").val();
+	var cond='2';
+	$.ajax({
+		url: '<?=base_url()?>store/getsuburb',
+		type: 'POST',
+		data: {state:state,cond:cond},
+		dataType: "html",
+		success: function(html) {
+			$('#divsuburbto').html(html);
+		}
+	})	
 }
 </script>
 
