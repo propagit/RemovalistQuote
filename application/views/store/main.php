@@ -10,15 +10,32 @@
     <p class="f14">Get competitive removalist quotes sent directly to your email inbox in 3 simple steps</p>
     <div class="col-md-3 home-boxes">
     	<img alt="moving-home.png" title="Moving home" src="<?=base_url()?>img/home1.png">
+        <div class="home-box-slide">
+        	 <span>Moving Home</span>
+             Moving across town or interstate we can find you quality removalist companies at competitive prices
+        </div>
     </div>
     <div class="col-md-3 home-boxes">
     	<img alt="moving-to-storage.png" title="Moving to storage" src="<?=base_url()?>img/home2.png">
+        <div class="home-box-slide">
+        	 <span>Moving To Storage</span>
+             Looking to move your goods into long term or short term storage, we can find you cost effective solutions in your local area
+        </div>
     </div>
     <div class="col-md-3 home-boxes">
     	<img alt="moving-1-to-5.png" title="Moving 1 to 5 items" src="<?=base_url()?>img/home3.png">
+        <div class="home-box-slide">
+        	<span>Moving 1 to 5 items</span>
+            Are you looking at moving a small number of items?<br/>
+            We can source and find movers that specialise in smaller moves that offer great service and competitive prices
+        </div>
     </div>
     <div class="col-md-3 home-boxes">
     	<img alt="moving-office.png" title="Moving office" src="<?=base_url()?>img/home4.png" >
+        <div class="home-box-slide">
+        	<span>Moving Office</span>
+            Needing to relocate your office locally or interstate we can find you quality providers at the best possible rates
+        </div>
     </div>
 
 </div>  
@@ -36,6 +53,27 @@ What sets <b>Removalsit Quote</b> apart from all other companies is that we prov
 </div>  
 <?php } ?>
 <script>
+
+$(function(){
+
+	/* $('.home-boxes').on({ 
+		mouseenter:function(){
+			var current_wrap = $(this);
+			var info_wrap = current_wrap.children('.home-box-slide');
+			info_wrap.animate({
+						'margin-top':-current_wrap.height(),
+				  	}, 300, function() {
+				  });
+		 },
+		 mouseleave:function(){
+			var current_wrap = $(this);
+			var info_wrap = current_wrap.children('.home-box-slide');
+			//info_wrap.hide();
+		 }
+ 
+	 }); */
+});//ready
+
 function getsuburbfrom() {
 	var state = $("#state_from").val();
 	var cond='1';
@@ -196,7 +234,7 @@ function next_step(service)
                     	Moving Home
                     	<div style="display:none; color:#fff; text-align:left; font-size:14px; font-weight:400; margin-left:10px; width:190px; line-height:normal" id="item_text1">
                         	Moving across town or interstate we can find you quality removalist companies at competitive prices
-                     </div>
+                     	</div>
                     </div>
                 </div>
                 <div id="home_item2" class="home_item" style="float:left; margin-right:5px;" onclick="next_step(2);">

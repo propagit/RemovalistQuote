@@ -77,7 +77,7 @@
         	<button class="btn btn-navbar mob-menu-btn" data-target=".nav-collapse" data-toggle="collapse" type="button">
                <i class="fa fa-align-justify"></i>
             </button>
-            <div class="nav-collapse collapse push" style="height: auto;">
+            <div class="nav-collapse collapse push mob-nav-collapse">
                 <ul class="nav mob-navbar">
                      <li><a <?=($cur_page == '' ? 'class="active"' : '');?> href="<?=base_url()?>">GET A QUOTE</a></li>
                      <li><a <?=($cur_page == 'suppliers' ? 'class="active"' : '');?> href="<?=base_url()?>suppliers">SUPPLIERS</a></li>

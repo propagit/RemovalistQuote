@@ -1,5 +1,5 @@
 <div class="col-md-12 page-bg"> 
-	<h1>STEP 3 <?=($removal_service != '' ? ' - '.$removal_service : '');?></h1>
+	<h1>Final Step <?=($removal_service != '' ? ' - '.$removal_service : '');?></h1>
     <p>
     	Please provide us with some basic information
 		on your removel requirments and we will find
@@ -71,13 +71,42 @@
         	</select>
   		</div>
         <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="text" class="form-control" id="phone" name="phone" data="required">
+        	<? 
+				$textarea='Important Info (i.e Level, Stairs, Lift, Parking, Packing, etc';
+				
+				if($this->session->userdata('service') =='1') { $textarea='Important Info (i.e Level, Stairs, Lift, Parking, Packing, etc';}
+				if($this->session->userdata('service') =='2') { $textarea='Important Info (i.e Level, Stairs, Lift, Parking, Packing, etc';}
+				if($this->session->userdata('service') =='3') { $textarea='Please provide list of items';}
+				if($this->session->userdata('service') =='4') { $textarea='Important Info (i.e Level, Stairs, Lift, Parking, Packing, etc';}							
+			
+			?>
+            <label for="phone">Additional Information</label>
+            <textarea class="form-control" id="additional" name="additional" onclick="clear_text()" onfocus="clear_text();"><?=$textarea;?></textarea>
   		</div>
         <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="text" class="form-control" id="phone" name="phone" data="required">
+            <label for="phone">Tick to agree with our Terms & Conditions &nbsp;&nbsp;</label>
+            <input type="checkbox" id="terms" name="terms" data="checked" data-msg="terms-error">
+            <span id="terms-error" class="text-danger hide">You need to agree to our Terms and Conditons before you can proceed</span>
   		</div>
-    
+    	<div class="form-group text-right">
+			<img class="btn-next-step" src="<?=base_url()?>img/get_me_3_quotes.png" />
+   		</div>
     </form>
 </div>
+<script>
+$(document).ready(function(){
+	$("#date_done").datepicker({ dateFormat: 'yy-mm-dd' });	
+	
+	$('.btn-next-step').on('click',function(){
+		if(help.validate_form('formquotes')){
+			$('#formquotes').submit();
+		}else{
+			alert('Please check the highlighted fields to make sure you have entered the correct data.');	
+		}
+	});	
+}); 
+
+function clear_text(){
+	$('#additional').val('');
+}
+</script>

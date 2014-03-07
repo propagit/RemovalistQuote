@@ -1,18 +1,10 @@
-<div id="home_top_container">
-	
-    <div class="main-bg main-page-bg">	  
-    
-    
-    
-        <div class="content-top">
-            <h1>SUCCESS <?=($removal_service != '' ? ' - '.$removal_service : '');?></h1>
-            <p class="dark_gray font_form" style="margin-top:5px;"><br />
-                We have successfully received your removalist quote request and will have 3 quotes sent to your inbox within 24 hours.<br /><br />
-                Thanks for using Removalist Quotes. 
-            </p>
-        </div>
-        
-    </div>
+<div class="col-md-12 page-bg"> 
+      <h1>SUCCESS</h1>
+      <p>
+      	  <br />
+          We have successfully received your removalist quote request and will have 3 quotes sent to your inbox within 24 hours.<br /><br />
+          Thanks for using Removalist Quotes. 
+      </p>
  </div>
 <!-- Google Code for Updated Quote Request Conversion Conversion Page -->
 <script type="text/javascript">

@@ -123,14 +123,20 @@ class Store extends CI_Controller {
 	
 	function savelocation()
 	{
-		$state_from=$this->input->post('state_from',true);		
-		$city_from=$this->input->post('city_from',true);
-		$suburb_from=$this->input->post('suburb_from',true);
+		if($this->input->post('removal_service',true)){
+			$service = $this->input->post('removal_service',true);
+			$this->session->set_userdata('service',$service);
+		}
 		
-		$state_to=$this->input->post('state_to',true);
-		$city_to=$this->input->post('city_to',true);
-		$suburb_to=$this->input->post('suburb_to',true);
+		$state_from = $this->input->post('state_from',true);		
+		$city_from = $this->input->post('city_from',true);
+		$suburb_from = $this->input->post('suburb_from',true);
 		
+		$state_to = $this->input->post('state_to',true);
+		$city_to = $this->input->post('city_to',true);
+		$suburb_to = $this->input->post('suburb_to',true);
+		
+		$this->session->set_userdata('state_from',$state_from);
 		$this->session->set_userdata('state_from',$state_from);
 		$this->session->set_userdata('state_to',$state_to);
 		
@@ -160,57 +166,48 @@ class Store extends CI_Controller {
 	
 	function savequotes()
 	{
-		$service=$this->session->userdata('service');
+		$service = $this->session->userdata('service');
 		
-		$state_from=$this->session->userdata('state_from');
-		$city_from=$this->session->userdata('city_from');
-		$suburb_from=$this->session->userdata('suburb_from');
+		$state_from = $this->session->userdata('state_from');
+		$city_from = $this->session->userdata('city_from');
+		$suburb_from = $this->session->userdata('suburb_from');
 		
-		$state_to=$this->session->userdata('state_to');
-		$city_to=$this->session->userdata('city_to');
-		$suburb_to=$this->session->userdata('suburb_to');
+		$state_to = $this->session->userdata('state_to');
+		$city_to = $this->session->userdata('city_to');
+		$suburb_to = $this->session->userdata('suburb_to');
 		
-		//$type_removal=$this->input->post('type_removal',true);
-		if($city_from==''){$city_from='None';}
-		if($city_to==''){$city_to='None';}
-		$to_contact=$this->input->post('to_contact',true);
-		$packing=$this->input->post('packing',true);
-		$cleaning=0;
-		if($service!=4){
-			$bedroom=$this->input->post('bedroom',true);			
+		if($city_from == ''){$city_from = 'None';}
+		if($city_to == ''){$city_to = 'None';}
+		$to_contact = $this->input->post('to_contact',true);
+		$packing = $this->input->post('packing',true);
+		$cleaning = 0;
+		if($service != 4){
+			$bedroom = $this->input->post('bedroom',true);			
+		}else{
+			$bedroom = '';			
 		}
-		else
-		{
-			$bedroom='';			
+		
+		if($service == 1){
+			$connecting = $this->input->post('connecting',true);
+		}else{
+			$connecting = 0;
+			$cleaning = 0;
 		}
-		if($service==1)
-		{
-			$connecting=$this->input->post('connecting',true);
-			//$cleaning=$this->input->post('cleaning',true);
-		}
-		else
-		{
-			$connecting=0;
-			$cleaning=0;
-		}
-		$date_done=$this->input->post('date_done',true);
+		$date_done = $this->input->post('date_done',true);
 		
-		$firstname=$this->input->post('firstname',true);
-		$lastname=$this->input->post('lastname',true);
-		$phone=$this->input->post('phone',true);
-		$email=$this->input->post('email',true);
-		$additional=$this->input->post('additional',true);
-		$need_cleaning=$this->input->post('need_cleaning',true);
+		$firstname = $this->input->post('firstname',true);
+		$lastname = $this->input->post('lastname',true);
+		$phone = $this->input->post('phone',true);
+		$email = $this->input->post('email',true);
+		$additional = $this->input->post('additional',true);
+		$need_cleaning = $this->input->post('need_cleaning',true);
 		
 		
 		
-		if($this->Customer_model->recognize($email))
-		{
+		if($this->Customer_model->recognize($email)){
 			$customer=$this->Customer_model->recognize($email);
 			$cust_id=$customer['id'];
-		}
-		else
-		{
+		}else{
 			$data=array(
 				'firstname' => $firstname,
 				'lastname' => $lastname,
@@ -246,15 +243,15 @@ class Store extends CI_Controller {
 		if($service==3){$service_text="Moving 1-5 Items";}
 		if($service==4){$service_text="Moving Office";}
 		
-		$state_from_text=$this->Location_model->identifystate($state_from);
+		$state_from_text = $this->Location_model->identifystate($state_from);
 		
-		$state_to_text=$this->Location_model->identifystate($state_to);
+		$state_to_text = $this->Location_model->identifystate($state_to);
 		
-		$suburb_from_text=$this->Location_model->identifysuburb($suburb_from);
-		$suburb_to_text=$this->Location_model->identifysuburb($suburb_to);
+		$suburb_from_text = $this->Location_model->identifysuburb($suburb_from);
+		$suburb_to_text = $this->Location_model->identifysuburb($suburb_to);
 		
-		if($cleaning==0){$cleaning_text='No';}else{$cleaning_text='Yes';}
-		$qid=$this->Quote_model->add($dataservice);
+		if($cleaning == 0){$cleaning_text = 'No';}else{$cleaning_text = 'Yes';}
+		$qid = $this->Quote_model->add($dataservice);
 		if($qid)
 		{
 			$subject ="Removalist Quote";
@@ -289,7 +286,7 @@ class Store extends CI_Controller {
 			
 			$message=$message.$footer;
 			
-			$this->load->library('email');
+			/* $this->load->library('email');
 			$config['mailtype'] = 'html';
 			 $this->email->initialize($config);
 			$this->email->from('noreply@removalistquote.com.au','Removalist Quote');
@@ -297,7 +294,7 @@ class Store extends CI_Controller {
 			$this->email->bcc('removalistquote@propagate.com.au');
 			$this->email->subject($subject);
 			$this->email->message($message);
-			$this->email->send();
+			$this->email->send(); */
 			
 			
 			//send email into backend
@@ -306,25 +303,20 @@ class Store extends CI_Controller {
 			
 		   
 	
-			$this->load->library('email');
+			/* $this->load->library('email');
 			
 			$config['mailtype'] = 'html';
 			$this->email->initialize($config);
 			$emailo = $this->System_model->get_email('name','order');
 			$email_o = json_decode($emailo['address'],true);
-			if($email_o) 
-			{
+			if($email_o){
 				$this->email->to($email_o[0]);
-				if(count($email_o) > 1)
-				{
-				 for($i=1;$i<count($email_o);$i++) 
-				 {
-					$this->email->cc($email_o[$i]);
-				 }
+				if(count($email_o) > 1){
+					 for($i=1;$i<count($email_o);$i++){
+						$this->email->cc($email_o[$i]);
+					 }
 				}
-			} 
-			else 
-			{
+			}else{
 				$this->email->to('info@shellyremovals.com.au');
 			}								
 			$this->email->bcc('removalistquote@propagate.com.au');
@@ -332,16 +324,14 @@ class Store extends CI_Controller {
 			$this->email->subject('New Request Quote');
 			$this->email->message($message);
 			$this->email->send();
-			$this->email->clear();	
+			$this->email->clear();	 */
 			
 			
 			
 			$this->session->set_flashdata('save','Your Quotes has been saved');
-				    $this->session->destroy();
+			$this->session->sess_destroy();
 			redirect('confirmation');			
-		}
-		else
-		{
+		}else{
 			$this->session->set_flashdata('save','Your Quotes has not been saved, please try again');
 			redirect('step3');			
 		}

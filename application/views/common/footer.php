@@ -1,4 +1,7 @@
 <hr />
+
+</div><!--container-->
+<div class="container white-bg">
 <footer>
 	<div id="footer">
           <div class="col-md-6 quicklinks-wrap">
@@ -30,8 +33,7 @@
           </div>
      </div>
 </footer>
-
-</div><!--container-->
+</div>
 
 <script type="text/javascript">
 $(function() {

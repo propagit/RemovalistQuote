@@ -47,11 +47,12 @@ var help = {
 				break;
 				
 				case 'checked':
+					var msg_box_id = $(this).attr('data-msg');
 					if(!$(this).is(':checked')){
-						valid = false;	
-						$(this).addClass('error');
+						valid = false;
+						$('#'+msg_box_id).removeClass('hide');
 					}else{
-						$(this).removeClass('error');
+						$('#'+msg_box_id).addClass('hide');
 					}
 				break;	
 			}
