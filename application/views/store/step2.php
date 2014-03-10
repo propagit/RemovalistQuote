@@ -1,68 +1,77 @@
- <div class="content-top">
-            <h1>STEP 2 <?=($removal_service != '' ? ' - '.$removal_service : '');?></h1>
-            <p class="dark_gray font_form" style="margin-top:5px;">
-                Please provide us with the postcode <br />
-				of your pick up address so we can find<br />
-				the most suitable removal company for your location<br />
-            </p>
-        </div>
-        <form name="formlocation" id="formlocation" action="<?=base_url()?>store/savelocation" method="post">
-        <div style="clear:both"></div>
-        <div style="float:none; padding-left:45px;">
-        	<div style="float:left; margin-top:15px;">
-            	<span class="gray font_form">State*</span>
-                <div style="margin-top:15px; text-align:right;">
-                <select id="state_from" name="state_from" onchange="getsuburbfrom()">
-                	<? foreach($states as $state){ ?>
-                    <option value="<?=$state['id']?>" <? if($state['id']==7){ echo 'selected=selected';}?>><?=$state['name']?></option>
-                    <? } ?>
-                </select>
-                </div>
-                <div style="margin-top:15px;">
-                <span class="gray font_form">City / Town</span>
-                </div>
-                <div style="background:url(<?=base_url()?>img/input_text.png); width:244px; height:43px;">
-                    <input type="text" id="city_from" name="city_from" style="margin-top:5px !important; background:none; width:240px !important">
-                    </div>
-                <div style="margin-top:15px;">                    
-                <span class="gray font_form">Suburb*</span>
-                </div>
-                <div style="margin-top:15px; text-align:right;" name="divsuburbfrom" id="divsuburbfrom">
-                <select name="suburb_from" id="suburb_from">
-                	<option value="-">Select Suburb</option>                    
-                </select>
-                </div>
+<div class="col-md-12 page-bg"> 
+    <h1 class="inline">STEP 2 <?=($removal_service != '' ? ' - '.$removal_service : '');?></h1>
+    <p>
+        Please provide us with the postcode <br />
+        of your pick up address so we can find<br />
+        the most suitable removal company for your location<br />
+    </p>
+    <form role="form" class="custom-form" id="formlocation" action="<?=base_url()?>store/savelocation" method="post">
+       <div class="form-group custom-group">
+            <label class="col-sm-5 custom-label remove-gutters" for="state_from">Your Current State</label>
+			<div class="col-sm-7 remove-gutters">
+             <select class="form-control" id="state_from" name="state_from" onchange="getsuburbfrom();" data="required">
+                <option value="">Select Your Current State</option>
+                <? foreach($states as $state){ ?>
+                <option value="<?=$state['id']?>"><?=$state['name']?></option>
+                <? } ?>
+             </select>
+             </div>
+       </div>
+       <div class="form-group custom-group hide">
+            <label class="col-sm-5 custom-label remove-gutters" for="current_city">Your Current City</label>
+			<div class="col-sm-7 remove-gutters">
+            <input type="text" class="form-control" id="city_from" name="city_from">
             </div>
-        	<div style="float:left; margin-top:15px; margin-left:20px;width:55px;">
-            	<span class="gray font_form">To</span>
+       </div>
+       <div class="form-group custom-group">
+             <label class="col-sm-5 custom-label remove-gutters" for="suburb_from">Your Current Suburb</label>
+			<div class="col-sm-7 remove-gutters">
+             <div id="divsuburbfrom">
+                 <select class="form-control" name="suburb_from" id="suburb_from"  data="required">
+                    <option value="">Select Suburb</option>                    
+                 </select>
+             </div>
+             </div>
+       </div>
+       <div class="form-group custom-group">
+            <label class="col-sm-5 custom-label remove-gutters" for="state_from">Your Destination State</label>
+			<div class="col-sm-7 remove-gutters">
+            <select class="form-control" id="state_to" name="state_to" onchange="getsuburbto();"  data="required">
+                <option value="">Select Your Destination State</option>
+                <? foreach($states as $state){ ?>
+                <option value="<?=$state['id']?>"><?=$state['name']?></option>
+                <? } ?>
+            </select>
             </div>
-            <div style="float:left; margin-top:15px;">
-            	<span class="gray font_form">State*</span>
-                <div style="margin-top:15px; text-align:right;">
-                <select id="state_to" name="state_to" onchange="getsuburbto()">
-                	<? foreach($states2 as $state){ ?>
-                    <option value="<?=$state['id']?>" <? if($state['id']==7){ echo 'selected=selected';}?>><?=$state['name']?></option>
-                    <? } ?>
-                </select>
-                </div>
-                <div style="margin-top:15px;">
-                <span class="gray font_form">City / Town</span>
-                </div>
-                <div style="background:url(<?=base_url()?>img/input_text.png); width:244px; height:43px;">
-                    <input type="text" id="city_to" name="city_to" style="margin-top:5px !important; background:none; width:240px !important">
-                    </div>
-                <div style="margin-top:15px;">                    
-                <span class="gray font_form">Suburb*</span>
-                </div>
-                <div style="margin-top:15px; text-align:right;" name="divsuburbto" id="divsuburbto">
-                <select name="suburb_to" id="suburb_to">
-                	<option value="-">Select Suburb</option>                    
-                </select>
-                </div>
+       </div>
+       <div class="form-group custom-group hide">
+            <label class="col-sm-5 custom-label remove-gutters" for="current_city">Your Destination City</label>
+			<div class="col-sm-7 remove-gutters">
+            <input type="text" class="form-control" id="city_to" >
             </div>
-        </div>
-        <div style="clear:both"></div>
-        <div style="float:right; margin-right:53px; margin-top:15px;">
-        <a onclick="checklocation()" ><img src="<?=base_url()?>img/next-step.png" style="float:right;"/></a>
-        </div>
-        </form>
+       </div>
+       <div class="form-group custom-group">
+             <label class="col-sm-5 custom-label remove-gutters" for="suburb_from">Your Destination Suburb</label>
+			 <div class="col-sm-7 remove-gutters">
+             <div id="divsuburbto">
+                 <select class="form-control" name="suburb_to" id="suburb_to"  data="required">
+                    <option value="">Select Suburb</option>                    
+                 </select>
+             </div>
+             </div>
+       </div>
+       <div class="form-group custom-group text-right">
+            <img class="btn-next-step" src="<?=base_url()?>img/next-step.png" />
+       </div>
+    </form>
+</div>
+<script>
+$('.btn-next-step').on('click',function(){
+	if(help.validate_form('mob-step1-form')){
+		$('#formlocation').submit();
+	}else{
+		alert('Please check the highlighted fields to make sure you have entered the correct data.');	
+	}
+	
+});
+</script>

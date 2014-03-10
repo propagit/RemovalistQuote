@@ -1,3 +1,50 @@
+<div class="col-md-12 page-bg"> 
+	<h1>REMOVALIST SERVICE SUPPLIERS</h1>
+    <p>            
+   	Join the Removalist Quote Removal networks and start winning work today!<br /><br />
+   
+	Removalist Service Suppliers are subject to Removalist Quotes quality and standards checks. To find out more about signing up as a supplier please <a href="<?=base_url()?>suppliermore" target="_blank">click here</a>.<br /><br />
+
+	Please enter your business details below and one of our staff members will contact you shortly.
+    </p>
+    
+    <form role="form" class="custom-form" id="form_contact" action="<?=base_url()?>store/sendcontact" method="post">
+    	<div class="form-group custom-group">
+            <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="first_name">Your Name</label>
+            <div class="col-sm-7 remove-gutters  remove-gutters">
+            <input type="text" class="form-control" id="name" name="name" data="required">
+            </div>
+  		</div>
+        <div class="form-group custom-group">
+            <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="last_name">Email Address</label>
+			<div class="col-sm-7 remove-gutters  remove-gutters">
+            <input type="text" class="form-control" id="email" name="email" data="email" >
+            </div>
+  		</div>
+        <div class="form-group custom-group">
+            <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="telephone">Telephone</label>
+			<div class="col-sm-7 remove-gutters  remove-gutters">
+           	 <input type="text" class="form-control" id="telephone" name="telephone" data="required">
+            </div>
+  		</div>
+       
+        <div class="form-group custom-group">
+            <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="additional">Your Message</label>
+			<div class="col-sm-7 remove-gutters  remove-gutters">
+            <textarea class="form-control" id="message" name="message"></textarea>
+            </div>
+  		</div>
+    	<div class="form-group custom-group text-right">
+			<img class="btn-next-step" src="<?=base_url()?>img/contactus-button.png" />
+   		</div>
+    </form>
+</div>
+
+
+
+
+
+<?php if(0){ ?>
 <script type="text/javascript" src="<?=base_url()?>js/popup.js"></script>
 <link href="<?=base_url()?>css/popup.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="<?=base_url()?>js/jquery-cycle-lite.js"></script>
@@ -341,4 +388,6 @@ Please enter your business details below and one of our staff members will conta
         </div>       
     </div>
 </div>
+
+<?php } ?>
 

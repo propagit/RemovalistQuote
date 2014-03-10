@@ -155,11 +155,11 @@ span.mob-menu-head {
 	padding-top:45px;
 	padding-bottom:20px;
 	margin-bottom:20px;
+	float:left;
+	width:100%;
+	min-height:400px;
 }
-.page-bg > .col-md-3{
-	padding-left:0;
-	padding-right:0;	
-}
+
 
 /* headers */
 .page-bg > h1{
@@ -193,6 +193,12 @@ span.mob-menu-head {
 	font-size: 22px;
 	color: #939393;
 	padding-bottom: 10px;
+	padding-top:10px;
+}
+.custom-label{
+	font-size: 22px;
+	color: #616161;
+	font-weight: 600;
 }
 .f14{
 	font-size:14px;	
@@ -214,6 +220,10 @@ span.mob-menu-head {
 	margin-right: 15px;
 }
 /* bottom boxes */
+.bottom-box-wrap{
+	float:left;
+	width:100%;	
+}
 .bottom-boxes{
 	max-width: 488px;
 	/* min-height: 210px; */	
@@ -320,6 +330,13 @@ span.mob-menu-head {
 	height: 43px;
 	cursor: pointer;
 }
+
+/* bootstrap overwrite helpers */
+.custom-group{
+	float:left;
+	width:100%;	
+}
+/* bootstrap overwrite ends */
 @media (max-width:1060px){
 	.container{ width:100%;}
 	.logo-wrap{
@@ -378,6 +395,9 @@ span.mob-menu-head {
 	}
 	.page-bg p{
 		font-size: 16px;	
+	}
+	.custom-label{
+		font-size:16px;	
 	}
 	.bottom-boxes{
 		width:48%;
@@ -485,6 +505,7 @@ span.mob-menu-head {
 		font-size:18px;	
 	}
 	.page-bg p{
+		font-size:14px;
 		font-size:14px;	
 	}
 	.home-boxes{
@@ -515,12 +536,13 @@ span.mob-menu-head {
 	.logo-wrap img{
 		width:100%;	
 	}
+	.btn-next-step{
+		width:90%;	
+	}
 }
 
 @media (max-width: 320px){
-	.btn-next-step{
-		width:100%;	
-	}
+	
 }
 
 /* helpers */
@@ -540,7 +562,12 @@ span.mob-menu-head {
 .error{
 	border-color:#a94442;	
 }
-
+.text-dark-grey{
+	color:#616161 !important;	
+}
+.bolder{
+	font-weight:800;	
+}
 
 /* end new css */
 

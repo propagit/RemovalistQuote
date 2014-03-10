@@ -42,7 +42,6 @@
 <div class="col-md-12 page-bg">
 	<h1>Removalist Quote</h1>
     <p>
-    <br />
     <b>Removalist Quote</b> provides <b>free removal quotes</b> for a full range of residential or commercial removals. Get competing removal quotes based on your needs and budget from several of our dedicated and independent partners. All of our partners are <b>professional removalist based in Melbourne</b> with year of experience in removalist services to ensure a smooth and easy relocation for you.<br /><br />
     
 What sets <b>Removalsit Quote</b> apart from all other companies is that we provide 3 free removal quotes for all of our removal services. Once a customer request a quote online, their request are analyzed and sent to the company that best suits them based on attributes such as relocating location, removalist services required etc.<br /><br />
