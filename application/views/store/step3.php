@@ -111,7 +111,7 @@
             <span id="terms-error" class="text-danger hide">You need to agree to our Terms and Conditons before you can proceed</span>
   		</div>
     	<div class="form-group custom-group text-right">
-			<img class="btn-next-step" src="<?=base_url()?>img/get_me_3_quotes.png" />
+			<img class="btn-next-step" src="<?=base_url()?>frontend-assets/img/get_me_3_quotes.png" />
    		</div>
     </form>
 </div>

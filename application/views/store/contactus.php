@@ -40,7 +40,7 @@
             </div>
   		</div>
     	<div class="form-group custom-group text-right">
-			<img class="btn-next-step" src="<?=base_url()?>img/contactus-button.png" />
+			<img class="btn-next-step" src="<?=base_url()?>frontend-assets/img/contactus-button.png" />
    		</div>
     </form>
 </div>

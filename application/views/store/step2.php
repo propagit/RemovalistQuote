@@ -61,7 +61,7 @@
              </div>
        </div>
        <div class="form-group custom-group text-right">
-            <img class="btn-next-step" src="<?=base_url()?>img/next-step.png" />
+            <img class="btn-next-step" src="<?=base_url()?>frontend-assets/img/next-step.png" />
        </div>
     </form>
 </div>

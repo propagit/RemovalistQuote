@@ -8,34 +8,69 @@
 	Please enter your business details below and one of our staff members will contact you shortly.
     </p>
     
-    <form role="form" class="custom-form" id="form_contact" action="<?=base_url()?>store/sendcontact" method="post">
+    <form role="form" class="custom-form" id="form_suppliers" action="<?=base_url()?>store/suppliers_add" method="post">
     	<div class="form-group custom-group">
-            <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="first_name">Your Name</label>
+            <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="name">Contact Name <span class="mandatory">*</span></label>
             <div class="col-sm-7 remove-gutters  remove-gutters">
-            <input type="text" class="form-control" id="name" name="name" data="required">
+            <input type="text" class="form-control" id="name" name="name" data="required" maxlength="255">
             </div>
   		</div>
         <div class="form-group custom-group">
-            <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="last_name">Email Address</label>
+            <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="business">Business Name <span class="mandatory">*</span></label>
 			<div class="col-sm-7 remove-gutters  remove-gutters">
-            <input type="text" class="form-control" id="email" name="email" data="email" >
+            <input type="text" class="form-control" id="business" name="business" data="required" maxlength="255">
             </div>
   		</div>
         <div class="form-group custom-group">
-            <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="telephone">Telephone</label>
+            <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="address">Address <span class="mandatory">*</span></label>
 			<div class="col-sm-7 remove-gutters  remove-gutters">
-           	 <input type="text" class="form-control" id="telephone" name="telephone" data="required">
+           	 <input type="text" class="form-control" id="address" name="address" data="required" maxlength="255">
             </div>
   		</div>
-       
         <div class="form-group custom-group">
-            <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="additional">Your Message</label>
+            <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="suburb">Suburb <span class="mandatory">*</span></label>
 			<div class="col-sm-7 remove-gutters  remove-gutters">
-            <textarea class="form-control" id="message" name="message"></textarea>
+           	 <input type="text" class="form-control" id="suburb" name="suburb" data="required" maxlength="255">
+            </div>
+  		</div>
+        <div class="form-group custom-group">
+            <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="state">State <span class="mandatory">*</span></label>
+			<div class="col-sm-7 remove-gutters  remove-gutters">
+           	 <input type="text" class="form-control" id="state" name="state" data="required" maxlength="32">
+            </div>
+  		</div>
+        <div class="form-group custom-group">
+            <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="postcode">Postcode <span class="mandatory">*</span></label>
+			<div class="col-sm-7 remove-gutters  remove-gutters">
+           	 <input type="text" class="form-control" id="postcode" name="postcode" data="required" maxlength="32">
+            </div>
+  		</div>
+        <div class="form-group custom-group">
+            <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="phone">Phone <span class="mandatory">*</span></label>
+			<div class="col-sm-7 remove-gutters  remove-gutters">
+           	 <input type="text" class="form-control" id="phone" name="phone" data="required" maxlength="32">
+            </div>
+  		</div>
+        <div class="form-group custom-group">
+            <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="email">Email <span class="mandatory">*</span></label>
+			<div class="col-sm-7 remove-gutters  remove-gutters">
+           	 <input type="text" class="form-control" id="email" name="email" data="email" maxlength="255">
+            </div>
+  		</div>
+        <div class="form-group custom-group">
+            <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="website">Website</label>
+			<div class="col-sm-7 remove-gutters  remove-gutters">
+           	 <input type="text" class="form-control" id="website" name="website" maxlength="255">
+            </div>
+  		</div>
+        <div class="form-group custom-group">
+            <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="description">About My Business</label>
+			<div class="col-sm-7 remove-gutters  remove-gutters">
+            <textarea class="form-control" id="description" name="description"></textarea>
             </div>
   		</div>
     	<div class="form-group custom-group text-right">
-			<img class="btn-next-step" src="<?=base_url()?>img/contactus-button.png" />
+			<img class="btn-next-step" src="<?=base_url()?>frontend-assets/img/signUp.png" />
    		</div>
     </form>
 </div>

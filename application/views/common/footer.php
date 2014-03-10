@@ -8,18 +8,18 @@
              <span class="copy">Removalist Quotes &copy; </span>
              <span class="quicklinks-head">Quick Links</span>
              <ul class="quicklinks">
-                <li class="li-line"><a href="<?=base_url()?>removalist_services">Removalist Services</a></li>
-                <li class="li-line"> <a href="<?=base_url()?>moving_home">Moving Home</a></li>
-                <li class="li-line"> <a href="<?=base_url()?>moving_office">Moving Office</a></li>
-                <li class="li-line"> <a href="<?=base_url()?>moving_to_storage">Moving To Storage</a></li>
-                <li class="li-line"> <a href="<?=base_url()?>removalist">Removalist</a></li>
+                <li><a href="<?=base_url()?>removalist_services">Removalist Services</a></li>
+                <li> <a href="<?=base_url()?>moving_home">Moving Home</a></li>
+                <li> <a href="<?=base_url()?>moving_office">Moving Office</a></li>
+                <li> <a href="<?=base_url()?>moving_to_storage">Moving To Storage</a></li>
+                <li> <a href="<?=base_url()?>removalist">Removalist</a></li>
             </ul>
             <ul class="quicklinks">
-                <li class="li-line"> <a href="<?=base_url()?>removalist/melbourne">Melbourne Removalist</a></li>
-                <li class="li-line"> <a href="<?=base_url()?>why_choose_removalist_quote">Why Choose Our Removalist Quote</a></li>
-                <li class="li-line"><a href="<?=base_url()?>privacy_policy">Privacy Policy</a></li>
-                <li class="li-line"><a href="<?=base_url()?>terms_and_conditions">Terms and Conditions</a></li>
-                <li class="li-line"><a href="<?=base_url()?>faq">Frequently Asked Questions</a></li>
+                <li> <a href="<?=base_url()?>removalist/melbourne">Melbourne Removalist</a></li>
+                <li> <a href="<?=base_url()?>why_choose_removalist_quote">Why Choose Our Removalist Quote</a></li>
+                <li><a href="<?=base_url()?>privacy_policy">Privacy Policy</a></li>
+                <li><a href="<?=base_url()?>terms_and_conditions">Terms and Conditions</a></li>
+                <li><a href="<?=base_url()?>faq">Frequently Asked Questions</a></li>
             </ul>
           </div>
           <div class="col-md-4 newsletter-signup-wrap">
