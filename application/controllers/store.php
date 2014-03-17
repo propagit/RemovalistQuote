@@ -15,7 +15,7 @@ class Store extends CI_Controller {
 		$this->load->model('System_model');	
 		$this->load->library('session');
 		
-		//error_reporting(E_ALL);
+		error_reporting(E_ALL);
 	}
 	
 	function index() {
