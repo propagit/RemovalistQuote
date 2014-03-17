@@ -13,12 +13,14 @@
             <input type="text" class="form-control" id="first_name" name="firstname" data="required">
             </div>
   		</div>
+        <?php if(1){?>
         <div class="form-group custom-group">
             <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="last_name">Last Name</label>
 			<div class="col-sm-7 remove-gutters  remove-gutters">
             <input type="text" class="form-control" id="last_name" name="lastname" data="required">
             </div>
   		</div>
+        <?php }?>
         <div class="form-group custom-group">
             <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="phone">Phone</label>
 			<div class="col-sm-7 remove-gutters  remove-gutters">
@@ -31,6 +33,7 @@
             	<input type="text" class="form-control" id="email" name="email" data="email">
             </div>
   		</div>
+        <?php if(0){?>
         <div class="form-group custom-group">
             <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="to_contact">Best time to contact</label>
 			<div class="col-sm-7 remove-gutters  remove-gutters">
@@ -43,6 +46,7 @@
         	</select>
             </div>
   		</div>
+        <?php }?>
     	<div class="form-group custom-group">
             <label class="col-sm-5 custom-label remove-gutters  remove-gutters" for="date_done">Moving date</label>
 			<div class="col-sm-7 remove-gutters  remove-gutters">

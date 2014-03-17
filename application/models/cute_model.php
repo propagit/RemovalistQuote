@@ -129,7 +129,7 @@ class Cute_model extends CI_Model
   private $l_strings;
   private $D_strings;
  
-  public $FilesPath = "/js/cute";
+  public $FilesPath = "/propagate/git/removalistquote/js/cute";
 	
   function __construct()
   {

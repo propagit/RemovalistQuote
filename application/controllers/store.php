@@ -286,7 +286,7 @@ class Store extends CI_Controller {
 			
 			$message=$message.$footer;
 			
-			/* $this->load->library('email');
+			$this->load->library('email');
 			$config['mailtype'] = 'html';
 			 $this->email->initialize($config);
 			$this->email->from('noreply@removalistquote.com.au','Removalist Quote');
@@ -294,16 +294,25 @@ class Store extends CI_Controller {
 			$this->email->bcc('removalistquote@propagate.com.au');
 			$this->email->subject($subject);
 			$this->email->message($message);
-			$this->email->send(); */
+			$this->email->send(); 
 			
 			
 			//send email into backend
 			// send email to admin
 			$message='<p>New Quote has been request. The Quote ID is '.$qid.' <br><br> The detail can be seen on the admin page. Thank you<br>';
 			
+			//send sample email
+			/* $email_data = array(
+						'to' => $email,
+						'from' => 'noreply@removalistquote.com.au',
+						'from_text' => 'Removalist Quote',
+						'subject' => $subject,
+						'message' => $message
+					);
+			$this->_send_email_localhost($email_data); */
 		   
 	
-			/* $this->load->library('email');
+			$this->load->library('email');
 			
 			$config['mailtype'] = 'html';
 			$this->email->initialize($config);
@@ -324,7 +333,7 @@ class Store extends CI_Controller {
 			$this->email->subject('New Request Quote');
 			$this->email->message($message);
 			$this->email->send();
-			$this->email->clear();	 */
+			$this->email->clear();	 
 			
 			
 			
@@ -752,6 +761,74 @@ class Store extends CI_Controller {
 		if($this->email->send()){
 			echo 'sent';	
 		}
+	}
+	
+	function _send_email_localhost($data)
+	{
+		$config = Array(
+		  'protocol' => 'smtp',
+		  'smtp_host' => 'ssl://smtp.googlemail.com',
+		  'smtp_port' => 465,
+		  'smtp_user' => 'propagate.au@gmail.com', // change it to yours
+		  'smtp_pass' => 'morem0n3y', // change it to yours
+		  'mailtype' => 'html',
+		  'charset' => 'iso-8859-1',
+		  'wordwrap' => TRUE
+		);
+		
+		if($data){
+		foreach($data as $key=>$val){
+				switch($key){
+					case 'to':
+						$to = $val;
+					break;
+					
+					case 'from':
+						$from = $val;
+					break;
+					
+					case 'cc':
+						$cc = $val;
+					break;
+										
+					case 'bcc':
+						$bcc = $val;
+					break;
+					
+					case 'from_text':
+						$from_text = $val;
+					break;
+					
+					case 'subject':
+						$subject = $val;
+					break;
+					
+					case 'message':
+						$message = $val;
+					break;
+					
+					case 'attachment':
+						$attachment = $val;
+					break;	
+				}
+				
+				
+			}
+		}
+		
+
+		$this->load->library('email', $config);
+		$this->email->set_newline("\r\n");
+		$this->email->from('propagate.au@gmail.com',$from_text); // change it to yours
+		$this->email->to($to);// change it to yours
+		$this->email->subject($subject);
+		$this->email->message($message);
+		
+		if($this->email->send()){
+		  	echo 'Email sent.';
+		}else{
+			show_error($this->email->print_debugger());
+		} 
 	}
 	
 }

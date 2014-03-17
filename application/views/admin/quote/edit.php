@@ -223,7 +223,7 @@ textarea{
                 <select name="packing" id="packing">
  					<option value='Full packing service' <? if($quote['packing']=='Full packing service'){echo 'Selected=selected';} ?>>Full packing service</option>
                     <option value='Fragile items only (Avoid breakages)' <? if($quote['packing']=='Fragile items only (Avoid breakages)'){echo 'Selected=selected';} ?>>Fragile items only (Avoid breakages)</option>
-                   <option value='No Thanks' <? if($quote['packing']=='No Thanks'){echo 'Selected=selected';} ?>>No Thanks</option>                            
+                   <option value='No Thanks' <? if($quote['packing']=='No thanks'){echo 'Selected=selected';} ?>>No Thanks</option>                            
                 </select></dd></dl>
 				</div>
 	          

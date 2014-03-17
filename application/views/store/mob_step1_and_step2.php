@@ -21,10 +21,12 @@
             <? } ?>
          </select>
    </div>
+   <?php if(0) {?>
    <div class="form-group hide">
         <label for="current_city">Your Current City</label>
     	<input type="text" class="form-control" id="city_from" name="city_from">
    </div>
+   <?php } ?>
    <div class="form-group">
          <label for="suburb_from">Your Current Suburb</label>
          <div id="divsuburbfrom">
@@ -42,10 +44,12 @@
             <? } ?>
         </select>
    </div>
+   <?php if(0) {?>
    <div class="form-group hide">
         <label for="current_city">Your Destination City</label>
     	<input type="text" class="form-control" id="city_to" >
    </div>
+   <?php } ?>
    <div class="form-group">
          <label for="suburb_from">Your Destination Suburb</label>
          <div id="divsuburbto">

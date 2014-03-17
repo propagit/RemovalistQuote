@@ -17,12 +17,14 @@
              </select>
              </div>
        </div>
+       <?php if(0) {?>
        <div class="form-group custom-group hide">
             <label class="col-sm-5 custom-label remove-gutters" for="current_city">Your Current City</label>
 			<div class="col-sm-7 remove-gutters">
             <input type="text" class="form-control" id="city_from" name="city_from">
             </div>
        </div>
+       <?php } ?>
        <div class="form-group custom-group">
              <label class="col-sm-5 custom-label remove-gutters" for="suburb_from">Your Current Suburb</label>
 			<div class="col-sm-7 remove-gutters">
@@ -44,12 +46,14 @@
             </select>
             </div>
        </div>
+       <?php if(0) {?>
        <div class="form-group custom-group hide">
             <label class="col-sm-5 custom-label remove-gutters" for="current_city">Your Destination City</label>
 			<div class="col-sm-7 remove-gutters">
             <input type="text" class="form-control" id="city_to" >
             </div>
        </div>
+       <?php } ?>
        <div class="form-group custom-group">
              <label class="col-sm-5 custom-label remove-gutters" for="suburb_from">Your Destination Suburb</label>
 			 <div class="col-sm-7 remove-gutters">
@@ -74,4 +78,33 @@ $('.btn-next-step').on('click',function(){
 	}
 	
 });
+
+function getsuburbfrom() {
+	var state = $("#state_from").val();
+	var cond='1';
+	$.ajax({
+		url: '<?=base_url()?>store/getsuburb',
+		type: 'POST',
+		data: {state:state,cond:cond},
+		dataType: "html",
+		success: function(html) {
+			$('#divsuburbfrom').html(html);
+		}
+	})
+	
+}
+
+function getsuburbto() {
+	var state = $("#state_to").val();
+	var cond='2';
+	$.ajax({
+		url: '<?=base_url()?>store/getsuburb',
+		type: 'POST',
+		data: {state:state,cond:cond},
+		dataType: "html",
+		success: function(html) {
+			$('#divsuburbto').html(html);
+		}
+	})	
+}
 </script>
