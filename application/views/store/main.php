@@ -78,35 +78,6 @@ $(function(){
 	 }); 
 });//ready
 
-function getsuburbfrom() {
-	var state = $("#state_from").val();
-	var cond='1';
-	$.ajax({
-		url: '<?=base_url()?>store/getsuburb',
-		type: 'POST',
-		data: {state:state,cond:cond},
-		dataType: "html",
-		success: function(html) {
-			$('#divsuburbfrom').html(html);
-		}
-	})
-	
-}
-
-function getsuburbto() {
-	var state = $("#state_to").val();
-	var cond='2';
-	$.ajax({
-		url: '<?=base_url()?>store/getsuburb',
-		type: 'POST',
-		data: {state:state,cond:cond},
-		dataType: "html",
-		success: function(html) {
-			$('#divsuburbto').html(html);
-		}
-	})	
-}
-
 function next_step(service){
 	window.location = '<?=base_url()?>store/saveservice/'+service;
 }

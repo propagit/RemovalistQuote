@@ -36,6 +36,11 @@ class Location_model extends CI_Model {
 		$data= $query->first_row('array');
 		return $data['name'];
 	}
+	function search_suburb($state,$keyword = "")
+	{
+		$sql = "select * from suburbs where state = ".$state." and name like '".$keyword."%' order by name asc limit 0,6";
+		return $this->db->query($sql)->result_array();
+	}
 	
 }
 ?>

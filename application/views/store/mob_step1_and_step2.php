@@ -14,55 +14,85 @@
    </div>
    <div class="form-group">
         <label for="state_from">Your Current State</label>
-         <select class="form-control" id="state_from" name="state_from" onchange="getsuburbfrom();" data="required">
+         <select class="form-control" id="state_from" name="state_from" data="required">
          	<option value="">Select Your Current State</option>
             <? foreach($states as $state){ ?>
             <option value="<?=$state['id']?>"><?=$state['name']?></option>
             <? } ?>
          </select>
    </div>
-   <?php if(0) {?>
-   <div class="form-group hide">
-        <label for="current_city">Your Current City</label>
-    	<input type="text" class="form-control" id="city_from" name="city_from">
-   </div>
-   <?php } ?>
    <div class="form-group">
-         <label for="suburb_from">Your Current Suburb</label>
-         <div id="divsuburbfrom">
-             <select class="form-control" name="suburb_from" id="suburb_from"  data="required">
-                <option value="">Select Suburb</option>                    
-             </select>
-         </div>
+        <label for="suburb_from">Your Current Suburb</label>
+    	<input type="text" class="form-control" id="search_suburb_from" onkeyup="search_suburb('from');">
+        <input type="hidden" id="suburb_from" name="suburb_from" value="0" />
    </div>
+   <div id="divsuburbfrom" class="form-group ajax-suburb-list-from"></div>
    <div class="form-group">
         <label for="state_from">Your Destination State</label>
-        <select class="form-control" id="state_to" name="state_to" onchange="getsuburbto();"  data="required">
+        <select class="form-control" id="state_to" name="state_to" data="required">
         	<option value="">Select Your Destination State</option>
             <? foreach($states as $state){ ?>
             <option value="<?=$state['id']?>"><?=$state['name']?></option>
             <? } ?>
         </select>
    </div>
-   <?php if(0) {?>
-   <div class="form-group hide">
-        <label for="current_city">Your Destination City</label>
-    	<input type="text" class="form-control" id="city_to" >
-   </div>
-   <?php } ?>
    <div class="form-group">
-         <label for="suburb_from">Your Destination Suburb</label>
-         <div id="divsuburbto">
-             <select class="form-control" name="suburb_to" id="suburb_to"  data="required">
-                <option value="">Select Suburb</option>                    
-             </select>
-         </div>
+         <label for="suburb_to">Your Destination Suburb</label>
+         <input type="text" class="form-control" id="search_suburb_to" onkeyup="search_suburb('to');">
+         <input type="hidden" id="suburb_to" name="suburb_to" value="0" />
+         <div id="divsuburbto"  class="form-group ajax-suburb-list-to"></div>
    </div>
    <div class="form-group text-right">
 		<img class="btn-next-step" src="<?=base_url()?>frontend-assets/img/next-step.png" />
    </div>
 </form>
 <script>
+$(function(){
+	//current suburb list
+	$(document).on('click','.suburb-from li',function(){
+		$('#search_suburb_from').val($(this).text());
+		$('#suburb_from').val($(this).attr('data-suburb-id'));
+		$('#divsuburbfrom').hide();
+	});
+	
+	$(document).on('click','.suburb-to li',function(){
+		$('#search_suburb_to').val($(this).text());
+		$('#suburb_to').val($(this).attr('data-suburb-id'));
+		$('#divsuburbto').hide();
+	});
+});//ready
+
+function search_suburb(type){
+	var state = '';
+	var keyword = '';
+	var cond = 1;
+	if(type == 'from'){
+		state = $('#state_from').val();
+		keyword = $('#search_suburb_from').val();
+		$('#divsuburbfrom').show();
+	}else{
+		state = $('#state_to').val();
+		keyword = $('#search_suburb_to').val();
+		cond = 2;
+		$('#divsuburbto').show();
+	}
+	if(state){
+		$.ajax({
+			url: '<?=base_url()?>store/search_suburb',
+			type: 'POST',
+			data: {state:state,cond:cond,keyword:keyword},
+			dataType: "html",
+			success: function(html) {
+				if(cond == 1){
+					$('#divsuburbfrom').html(html);
+				}else{
+					$('#divsuburbto').html(html);
+				}
+			}
+		});
+	}
+}
+
 $('.btn-next-step').on('click',function(){
 	if(help.validate_form('mob-step1-form')){
 		$('#mob-step1-form').submit();

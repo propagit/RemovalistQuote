@@ -319,6 +319,43 @@ span.mob-menu-head {
 	display:inline;
 	cursor:pointer;	
 }
+.ajax-suburb-list-from{
+	margin-top: -16px;
+	padding-bottom: 1px;
+	z-index: 1000;
+	width: 100%;
+}
+.ajax-suburb-list-to{
+	margin-top:-1px;	
+	padding-bottom: 10px;
+	z-index: 1000;
+	width: 100%;
+}
+
+.frm-group-suburb-from-wrap{
+	display:none;	
+}
+.suburb-list{
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	list-style: none;
+	margin: 0;
+	padding: 0;	
+	background-color:#fff;
+}
+.suburb-list li{
+	padding: 0 10px;
+	cursor: pointer;
+}
+.suburb-list li:first-child{
+	padding-top:5px;
+}
+.suburb-list li:last-child{
+	padding-bottom:5px;
+}
+.ajax-suburb-list-desktop{
+	margin-top:-16px;	
+}
 /* footer */
 #footer{
 	margin-bottom:20px;	
@@ -605,7 +642,12 @@ span.mob-menu-head {
 	.quicklinks{
 		width:100%;	
 	}
-	
+	.ajax-suburb-list-desktop{
+		margin-top:-40px;	
+	}
+	.ajax-from-suburb-list-desktop{
+		margin-top:-25px;	
+	}
 }
 @media (max-width: 480px){
 	.logo-wrap img{
@@ -648,6 +690,9 @@ span.mob-menu-head {
 }
 .bolder{
 	font-weight:800;	
+}
+.remove-bottom-margin{
+	bottom-margin:0;	
 }
 
 /* end new css */

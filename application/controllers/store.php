@@ -92,6 +92,25 @@ class Store extends CI_Controller {
 		$this->load->view('common/footer');
 	}
 	
+	function search_suburb()
+	{
+		$keyword = $this->input->post('keyword',true);
+		$state = $this->input->post('state',true);	
+		$cond = $this->input->post('cond',true);
+		$suburbs = $this->Location_model->search_suburb($state,$keyword);
+		$options = '';
+		if($suburbs){
+			foreach($suburbs as $suburb){
+				$options .= '<li data-suburb-id='.$suburb['id'].'>'.$suburb['name'].'</li>';
+			}
+		}
+		if($cond == 1){
+			echo '<ul class="suburb-list suburb-from">'.$options.'</ul>';
+		}else{
+			echo '<ul class="suburb-list suburb-to">'.$options.'</ul>';	
+		}
+	}
+	
 	function getsuburb()
 	{
 		$state=$this->input->post('state',true);
@@ -243,9 +262,8 @@ class Store extends CI_Controller {
 		if($service==3){$service_text="Moving 1-5 Items";}
 		if($service==4){$service_text="Moving Office";}
 		
-		$state_from_text = $this->Location_model->identifystate($state_from);
-		
-		$state_to_text = $this->Location_model->identifystate($state_to);
+		//$state_from_text = $this->Location_model->identifystate($state_from);
+		//$state_to_text = $this->Location_model->identifystate($state_to);
 		
 		$suburb_from_text = $this->Location_model->identifysuburb($suburb_from);
 		$suburb_to_text = $this->Location_model->identifysuburb($suburb_to);
