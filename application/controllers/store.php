@@ -15,7 +15,7 @@ class Store extends CI_Controller {
 		$this->load->model('System_model');	
 		$this->load->library('session');
 		
-		error_reporting(E_ALL);
+		//error_reporting(E_ALL);
 	}
 	
 	function index() {
@@ -262,8 +262,8 @@ class Store extends CI_Controller {
 		if($service==3){$service_text="Moving 1-5 Items";}
 		if($service==4){$service_text="Moving Office";}
 		
-		//$state_from_text = $this->Location_model->identifystate($state_from);
-		//$state_to_text = $this->Location_model->identifystate($state_to);
+		$state_from_text = $this->Location_model->identifystate($state_from);
+		$state_to_text = $this->Location_model->identifystate($state_to);
 		
 		$suburb_from_text = $this->Location_model->identifysuburb($suburb_from);
 		$suburb_to_text = $this->Location_model->identifysuburb($suburb_to);

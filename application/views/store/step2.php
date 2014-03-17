@@ -84,10 +84,12 @@ function search_suburb(type){
 	var keyword = '';
 	var cond = 1;
 	if(type == 'from'){
+		$('#suburb_from').val(0);
 		state = $('#state_from').val();
 		keyword = $('#search_suburb_from').val();
 		$('#divsuburbfrom').show();
 	}else{
+		$('#suburb_to').val(0);
 		state = $('#state_to').val();
 		keyword = $('#search_suburb_to').val();
 		cond = 2;
@@ -113,7 +115,23 @@ function search_suburb(type){
 
 $('.btn-next-step').on('click',function(){
 	if(help.validate_form('mob-step1-form')){
-		$('#formlocation').submit();
+		var msg = '';
+		var valid = true;
+		if($('#suburb_from').val() == 0){
+			$('#search_suburb_from').addClass('error');
+			msg += 'Invalid Current Suburb\n';
+			valid = false;
+		}
+		if($('#suburb_to').val() == 0){
+			$('#search_suburb_to').addClass('error');
+			msg += 'Invalid Destination Suburb\n';
+			valid = false;
+		}
+		if(valid){
+			$('#formlocation').submit();
+		}else{
+			alert(msg);	
+		}
 	}else{
 		alert('Please check the highlighted fields to make sure you have entered the correct data.');	
 	}
