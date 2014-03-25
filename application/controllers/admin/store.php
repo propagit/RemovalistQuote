@@ -581,7 +581,7 @@ Sorry for any inconvenience this might cause you.  If you would like to discuss 
 	function exportsupplier() {
 		$csvdir = getcwd();
 		//$csvdir = $csvdir.'/csv/';
-		$csvname = 'customer_'.date('d-m-Y');
+		$csvname = 'suppliers_'.date('d-m-Y');
 		$csvname = $csvname.'.csv';
 		header('Content-type: application/csv; charset=utf-8;');
         header("Content-Disposition: attachment; filename=$csvname");
@@ -591,12 +591,12 @@ Sorry for any inconvenience this might cause you.  If you would like to discuss 
 		$suppliers = $this->Supplier_model->all();
 		
 		
-			$headings = array('First Name','Family Name','Email','Store Name','Trading Name','Address 1','Address 2','Suburb','State','Postcode','Phone Number','Mobile','Joined','Last Updated');
+			$headings = array('First Name','Family Name','Email','Store Name','Address 1','Address 2','Suburb','State','Postcode','Phone Number','Added','Last Updated');
 		fputcsv($fp,$headings);
 			foreach ($suppliers as $supplier) 
 			{
 				//$customer = $this->Customer_model->identify($user['customer_id']);
-				fputcsv($fp,array($supplier['firstname'],$supplier['familyname'],$supplier['email'],$supplier['storename'],$supplier['tradename'],$supplier['address'],$supplier['address2'],$supplier['suburb'],$supplier['state'],$supplier['postcode'],$supplier['phone'],$supplier['mobile'],$supplier['joined'],$supplier['modified']));
+				fputcsv($fp,array($supplier['firstname'],$supplier['lastname'],$supplier['email'],str_replace(array("\r", "\r\n", "\n", ","), '-', $supplier['business_name']),$supplier['address1'],$supplier['address2'],$supplier['suburb'],$supplier['state'],$supplier['postcode'],$supplier['phone'],$supplier['added'],$supplier['modified']));
 			}
 		
 		

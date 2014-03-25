@@ -64,9 +64,9 @@ function deletesubscribe(id) {
                     	<div class="cust-fname">
 						<?php
 							if($this->session->userdata('type')==4){						
-						 		echo to_short($supplier['storename'],18);
+						 		echo substr($supplier['storename'],0,18);
 							}else{
-								echo to_short($supplier['business_name'],18);								
+								echo substr($supplier['business_name'],0,18);								
 							}	
 						 ?>
 						</div>
